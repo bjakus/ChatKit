@@ -19,13 +19,13 @@ android {
 }
 
 publish {
-    groupId = 'com.github.stfalcon'
+    groupId = 'com.github.bjakus'
     artifactId = 'chatkit'
     publishVersion = '0.3.3'
     desc = 'ChatKit - is a library designed to simplify the development of UI for such a trivial task as chat. It have flexible possibilities for styling, customizing and data management'
     licences = ['Apache-2.0']
     uploadName = 'ChatKit'
-    website = 'https://github.com/stfalcon-studio/ChatKit.git'
+    website = 'https://github.com/bjakus/ChatKit.git'
 }
 
 ext {
