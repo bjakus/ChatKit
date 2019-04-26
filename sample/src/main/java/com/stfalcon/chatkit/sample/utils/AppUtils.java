@@ -16,4 +16,5 @@ public class AppUtils {
     public static void showToast(Context context, String text, boolean isLong) {
         Toast.makeText(context, text, isLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT).show();
     }
+    //comment
 }
