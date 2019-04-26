@@ -31,7 +31,7 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
 
     private static final int TOTAL_MESSAGES_COUNT = 100;
 
-    protected final String senderId = "0";
+    protected final Integer senderId = 0;
     protected ImageLoader imageLoader;
     protected MessagesListAdapter<Message> messagesAdapter;
 
@@ -108,7 +108,7 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
             @Override
             public void run() {
                 ArrayList<Message> messages = MessagesFixtures.getMessages(lastLoadedDate);
-                lastLoadedDate = messages.get(messages.size() - 1).getCreatedAt();
+                lastLoadedDate = messages.get(messages.size() - 1).getCreatedAt().toDate();
                 messagesAdapter.addToEnd(messages, false);
             }
         }, 1000);
@@ -121,7 +121,7 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
                 String createdAt = new SimpleDateFormat("MMM d, EEE 'at' h:mm a", Locale.getDefault())
                         .format(message.getCreatedAt());
 
-                String text = message.getText();
+                String text = message.getMessage();
                 if (text == null) text = "[attachment]";
 
                 return String.format(Locale.getDefault(), "%s: %s (%s)",

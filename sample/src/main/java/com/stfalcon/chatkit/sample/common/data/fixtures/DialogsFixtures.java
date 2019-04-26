@@ -4,6 +4,8 @@ import com.stfalcon.chatkit.sample.common.data.model.Dialog;
 import com.stfalcon.chatkit.sample.common.data.model.Message;
 import com.stfalcon.chatkit.sample.common.data.model.User;
 
+import org.joda.time.DateTime;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,13 +26,13 @@ public final class DialogsFixtures extends FixturesData {
             calendar.add(Calendar.DAY_OF_MONTH, -(i * i));
             calendar.add(Calendar.MINUTE, -(i * i));
 
-            chats.add(getDialog(i, calendar.getTime()));
+            chats.add(getDialog(i, new DateTime(calendar.getTime())));
         }
 
         return chats;
     }
 
-    private static Dialog getDialog(int i, Date lastMessageCreatedAt) {
+    private static Dialog getDialog(int i, DateTime lastMessageCreatedAt) {
         ArrayList<User> users = getUsers();
         return new Dialog(
                 getRandomId(),
@@ -60,7 +62,7 @@ public final class DialogsFixtures extends FixturesData {
                 getRandomBoolean());
     }
 
-    private static Message getMessage(final Date date) {
+    private static Message getMessage(final DateTime date) {
         return new Message(
                 getRandomId(),
                 getUser(),

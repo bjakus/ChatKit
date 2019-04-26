@@ -2,17 +2,19 @@ package com.stfalcon.chatkit.sample.common.data.model;
 
 import com.stfalcon.chatkit.commons.models.IUser;
 
+import java.io.File;
+
 /*
  * Created by troy379 on 04.04.17.
  */
 public class User implements IUser {
 
-    private String id;
+    private Integer id;
     private String name;
     private String avatar;
     private boolean online;
 
-    public User(String id, String name, String avatar, boolean online) {
+    public User(Integer id, String name, String avatar, boolean online) {
         this.id = id;
         this.name = name;
         this.avatar = avatar;
@@ -20,7 +22,7 @@ public class User implements IUser {
     }
 
     @Override
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -30,7 +32,7 @@ public class User implements IUser {
     }
 
     @Override
-    public String getAvatar() {
+    public String getUserImage() {
         return avatar;
     }
 

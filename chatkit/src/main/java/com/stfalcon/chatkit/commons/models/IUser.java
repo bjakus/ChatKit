@@ -26,7 +26,7 @@ public interface IUser {
      *
      * @return the user's id
      * */
-    String getId();
+    Integer getId();
 
     /**
      * Returns the user's name
@@ -40,5 +40,5 @@ public interface IUser {
      *
      * @return the user's avatar image url
      * */
-    String getAvatar();
+    String getUserImage();
 }

@@ -53,5 +53,6 @@ dependencies {
 
     //Utils
     implementation "me.relex:circleindicator:$circleindicatorVersion"
+    implementation 'joda-time:joda-time:2.10.1'
 
 }

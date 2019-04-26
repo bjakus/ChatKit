@@ -330,9 +330,9 @@ public class DialogsListAdapter<DIALOG extends IDialog>
         Collections.sort(items, new Comparator<DIALOG>() {
             @Override
             public int compare(DIALOG o1, DIALOG o2) {
-                if (o1.getLastMessage().getCreatedAt().after(o2.getLastMessage().getCreatedAt())) {
+                if (o1.getLastMessage().getCreatedAt().toDate().after(o2.getLastMessage().getCreatedAt().toDate())) {
                     return -1;
-                } else if (o1.getLastMessage().getCreatedAt().before(o2.getLastMessage().getCreatedAt())) {
+                } else if (o1.getLastMessage().getCreatedAt().toDate().before(o2.getLastMessage().getCreatedAt().toDate())) {
                     return 1;
                 } else return 0;
             }
@@ -646,7 +646,7 @@ public class DialogsListAdapter<DIALOG extends IDialog>
             String formattedDate = null;
 
             if (dialog.getLastMessage() != null) {
-                Date lastMessageDate = dialog.getLastMessage().getCreatedAt();
+                Date lastMessageDate = dialog.getLastMessage().getCreatedAt().toDate();
                 if (datesFormatter != null) formattedDate = datesFormatter.format(lastMessageDate);
                 tvDate.setText(formattedDate == null
                         ? getDateString(lastMessageDate)
@@ -662,7 +662,7 @@ public class DialogsListAdapter<DIALOG extends IDialog>
 
             //Set Last message user avatar with check if there is last message
             if (imageLoader != null && dialog.getLastMessage() != null) {
-                imageLoader.loadImage(ivLastMessageUser, dialog.getLastMessage().getUser().getAvatar(), null);
+                imageLoader.loadImage(ivLastMessageUser, dialog.getLastMessage().getUser().getUserImage(), null);
             }
             ivLastMessageUser.setVisibility(dialogStyle.isDialogMessageAvatarEnabled()
                     && dialog.getUsers().size() > 1
@@ -670,7 +670,7 @@ public class DialogsListAdapter<DIALOG extends IDialog>
 
             //Set Last message text
             if (dialog.getLastMessage() != null) {
-                tvLastMessage.setText(dialog.getLastMessage().getText());
+                tvLastMessage.setText(dialog.getLastMessage().getMessage());
             } else {
                 tvLastMessage.setText(null);
             }

@@ -596,13 +596,13 @@ public class MessageHolders {
     }
 
 
-    protected int getViewType(Object item, String senderId) {
+    protected int getViewType(Object item, Integer senderId) {
         boolean isOutcoming = false;
         int viewType;
 
         if (item instanceof IMessage) {
             IMessage message = (IMessage) item;
-            isOutcoming = message.getUser().getId().contentEquals(senderId);
+            isOutcoming = message.getUser().getId().equals(senderId);
             viewType = getContentViewType(message);
 
         } else viewType = VIEW_TYPE_DATE_HEADER;
@@ -767,7 +767,7 @@ public class MessageHolders {
             }
 
             if (text != null) {
-                text.setText(message.getText());
+                text.setText(message.getMessage());
             }
         }
 
@@ -826,7 +826,7 @@ public class MessageHolders {
             }
 
             if (text != null) {
-                text.setText(message.getText());
+                text.setText(message.getMessage());
             }
         }
 
@@ -1058,17 +1058,17 @@ public class MessageHolders {
         @Override
         public void onBind(MESSAGE message) {
             if (time != null) {
-                time.setText(DateFormatter.format(message.getCreatedAt(), DateFormatter.Template.TIME));
+                time.setText(DateFormatter.format(message.getCreatedAt().toDate(), DateFormatter.Template.TIME));
             }
 
             if (userAvatar != null) {
                 boolean isAvatarExists = imageLoader != null
-                        && message.getUser().getAvatar() != null
-                        && !message.getUser().getAvatar().isEmpty();
+                        && message.getUser().getUserImage() != null
+                        && message.getUser().getUserImage().length() != 0;
 
                 userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
                 if (isAvatarExists) {
-                    imageLoader.loadImage(userAvatar, message.getUser().getAvatar(), null);
+                    imageLoader.loadImage(userAvatar, message.getUser().getUserImage(), null);
                 }
             }
         }
@@ -1116,7 +1116,7 @@ public class MessageHolders {
         @Override
         public void onBind(MESSAGE message) {
             if (time != null) {
-                time.setText(DateFormatter.format(message.getCreatedAt(), DateFormatter.Template.TIME));
+                time.setText(DateFormatter.format(message.getCreatedAt().toDate(), DateFormatter.Template.TIME));
             }
         }
 

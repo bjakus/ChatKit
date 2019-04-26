@@ -75,8 +75,9 @@ abstract class FixturesData {
         }
     };
 
-    static String getRandomId() {
-        return Long.toString(UUID.randomUUID().getLeastSignificantBits());
+    static Integer getRandomId() {
+        Long l = (UUID.randomUUID().getLeastSignificantBits());
+        return l.intValue();
     }
 
     static String getRandomAvatar() {

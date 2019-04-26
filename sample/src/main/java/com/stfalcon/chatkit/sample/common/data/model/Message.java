@@ -3,6 +3,8 @@ package com.stfalcon.chatkit.sample.common.data.model;
 import com.stfalcon.chatkit.commons.models.IMessage;
 import com.stfalcon.chatkit.commons.models.MessageContentType;
 
+import org.joda.time.DateTime;
+
 import java.util.Date;
 
 /*
@@ -12,18 +14,18 @@ public class Message implements IMessage,
         MessageContentType.Image, /*this is for default image messages implementation*/
         MessageContentType /*and this one is for custom content type (in this case - voice message)*/ {
 
-    private String id;
+    private Integer id;
     private String text;
-    private Date createdAt;
+    private DateTime createdAt;
     private User user;
     private Image image;
     private Voice voice;
 
-    public Message(String id, User user, String text) {
-        this(id, user, text, new Date());
+    public Message(Integer id, User user, String text) {
+        this(id, user, text, new DateTime());
     }
 
-    public Message(String id, User user, String text, Date createdAt) {
+    public Message(Integer id, User user, String text, DateTime createdAt) {
         this.id = id;
         this.text = text;
         this.user = user;
@@ -31,17 +33,17 @@ public class Message implements IMessage,
     }
 
     @Override
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     @Override
-    public String getText() {
+    public String getMessage() {
         return text;
     }
 
     @Override
-    public Date getCreatedAt() {
+    public DateTime getCreatedAt() {
         return createdAt;
     }
 
@@ -67,7 +69,7 @@ public class Message implements IMessage,
         this.text = text;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(DateTime createdAt) {
         this.createdAt = createdAt;
     }
 

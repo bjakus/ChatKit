@@ -16,6 +16,8 @@
 
 package com.stfalcon.chatkit.commons.models;
 
+import org.joda.time.DateTime;
+
 import java.util.Date;
 
 /**
@@ -28,14 +30,14 @@ public interface IMessage {
      *
      * @return the message id
      */
-    String getId();
+    Integer getId();
 
     /**
      * Returns message text
      *
      * @return the message text
      */
-    String getText();
+    String getMessage();
 
     /**
      * Returns message author. See the {@link IUser} for more details
@@ -49,5 +51,5 @@ public interface IMessage {
      *
      * @return the message creation date
      */
-    Date getCreatedAt();
+    DateTime getCreatedAt();
 }
