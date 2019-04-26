@@ -48,7 +48,7 @@ public class Message implements IMessage,
     }
 
     @Override
-    public User getUser() {
+    public User getAuthor() {
         return this.user;
     }
 

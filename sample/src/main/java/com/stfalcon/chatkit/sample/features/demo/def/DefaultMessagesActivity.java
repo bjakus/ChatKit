@@ -62,7 +62,7 @@ public class DefaultMessagesActivity extends DemoMessagesActivity
                     @Override
                     public void onMessageViewClick(View view, Message message) {
                         AppUtils.showToast(DefaultMessagesActivity.this,
-                                message.getUser().getName() + " avatar click",
+                                message.getAuthor().getName() + " avatar click",
                                 false);
                     }
                 });

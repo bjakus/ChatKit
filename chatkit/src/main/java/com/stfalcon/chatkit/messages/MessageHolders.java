@@ -602,7 +602,7 @@ public class MessageHolders {
 
         if (item instanceof IMessage) {
             IMessage message = (IMessage) item;
-            isOutcoming = message.getUser().getId().equals(senderId);
+            isOutcoming = message.getAuthor().getId().equals(senderId);
             viewType = getContentViewType(message);
 
         } else viewType = VIEW_TYPE_DATE_HEADER;
@@ -1063,12 +1063,12 @@ public class MessageHolders {
 
             if (userAvatar != null) {
                 boolean isAvatarExists = imageLoader != null
-                        && message.getUser().getUserImage() != null
-                        && message.getUser().getUserImage().length() != 0;
+                        && message.getAuthor().getUserImage() != null
+                        && message.getAuthor().getUserImage().length() != 0;
 
                 userAvatar.setVisibility(isAvatarExists ? View.VISIBLE : View.GONE);
                 if (isAvatarExists) {
-                    imageLoader.loadImage(userAvatar, message.getUser().getUserImage(), null);
+                    imageLoader.loadImage(userAvatar, message.getAuthor().getUserImage(), null);
                 }
             }
         }
