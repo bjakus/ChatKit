@@ -22,6 +22,8 @@ import com.stfalcon.chatkit.commons.models.MessageContentType;
 import com.stfalcon.chatkit.utils.DateFormatter;
 import com.stfalcon.chatkit.utils.RoundedImageView;
 
+import org.joda.time.DateTime;
+
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,7 +39,7 @@ public class MessageHolders {
     private static final short VIEW_TYPE_TEXT_MESSAGE = 131;
     private static final short VIEW_TYPE_IMAGE_MESSAGE = 132;
 
-    private Class<? extends ViewHolder<Date>> dateHeaderHolder;
+    private Class<? extends ViewHolder<DateTime>> dateHeaderHolder;
     private int dateHeaderLayout;
 
     private HolderConfig<IMessage> incomingTextConfig;
@@ -402,7 +404,7 @@ public class MessageHolders {
      * @return {@link MessageHolders} for subsequent configuration.
      */
     public MessageHolders setDateHeaderConfig(
-            @NonNull Class<? extends ViewHolder<Date>> holder,
+            @NonNull Class<? extends ViewHolder<DateTime>> holder,
             @LayoutRes int layout) {
         this.dateHeaderHolder = holder;
         this.dateHeaderLayout = layout;
@@ -415,7 +417,7 @@ public class MessageHolders {
      * @param holder holder class.
      * @return {@link MessageHolders} for subsequent configuration.
      */
-    public MessageHolders setDateHeaderHolder(@NonNull Class<? extends ViewHolder<Date>> holder) {
+    public MessageHolders setDateHeaderHolder(@NonNull Class<? extends ViewHolder<DateTime>> holder) {
         this.dateHeaderHolder = holder;
         return this;
     }
@@ -588,7 +590,7 @@ public class MessageHolders {
                     });
                 }
             }
-        } else if (item instanceof Date) {
+        } else if (item instanceof DateTime) {
             ((MessageHolders.DefaultDateHeaderViewHolder) holder).dateHeadersFormatter = dateHeadersFormatter;
         }
 
@@ -1000,7 +1002,7 @@ public class MessageHolders {
     /**
      * Default view holder implementation for date header
      */
-    public static class DefaultDateHeaderViewHolder extends ViewHolder<Date>
+    public static class DefaultDateHeaderViewHolder extends ViewHolder<DateTime>
             implements DefaultMessageViewHolder {
 
         protected TextView text;
@@ -1013,11 +1015,11 @@ public class MessageHolders {
         }
 
         @Override
-        public void onBind(Date date) {
+        public void onBind(DateTime date) {
             if (text != null) {
                 String formattedDate = null;
-                if (dateHeadersFormatter != null) formattedDate = dateHeadersFormatter.format(date);
-                text.setText(formattedDate == null ? DateFormatter.format(date, dateFormat) : formattedDate);
+                if (dateHeadersFormatter != null) formattedDate = dateHeadersFormatter.format(date.toDate());
+                text.setText(formattedDate == null ? DateFormatter.format(date.toDate(), dateFormat) : formattedDate);
             }
         }
 

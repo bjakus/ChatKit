@@ -870,7 +870,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
          * @param layout layout resource.
          */
         @Deprecated
-        public void setDateHeader(Class<? extends ViewHolder<Date>> holder, @LayoutRes int layout) {
+        public void setDateHeader(Class<? extends ViewHolder<DateTime>> holder, @LayoutRes int layout) {
             super.setDateHeaderConfig(holder, layout);
         }
     }
