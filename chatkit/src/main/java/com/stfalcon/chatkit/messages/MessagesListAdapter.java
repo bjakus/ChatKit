@@ -36,6 +36,8 @@ import com.stfalcon.chatkit.commons.ViewHolder;
 import com.stfalcon.chatkit.commons.models.IMessage;
 import com.stfalcon.chatkit.utils.DateFormatter;
 
+import org.joda.time.DateTime;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -174,7 +176,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
 
         if (!items.isEmpty()) {
             int lastItemPosition = items.size() - 1;
-            Date lastItem = (Date) items.get(lastItemPosition).item;
+            Date lastItem = (Date) ((DateTime) items.get(lastItemPosition).item).toDate();
             if (DateFormatter.isSameDay(messages.get(0).getCreatedAt().toDate(), lastItem)) {
                 items.remove(lastItemPosition);
                 notifyItemRemoved(lastItemPosition);
