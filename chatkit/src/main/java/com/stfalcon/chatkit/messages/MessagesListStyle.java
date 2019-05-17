@@ -34,72 +34,72 @@ import com.stfalcon.chatkit.commons.Style;
  * Style for MessagesListStyle customization by xml attributes
  */
 @SuppressWarnings("WeakerAccess")
-class MessagesListStyle extends Style {
+public class MessagesListStyle extends Style {
 
-    private int textAutoLinkMask;
-    private int incomingTextLinkColor;
-    private int outcomingTextLinkColor;
+    public int textAutoLinkMask;
+    public int incomingTextLinkColor;
+    public int outcomingTextLinkColor;
 
-    private int incomingAvatarWidth;
-    private int incomingAvatarHeight;
+    public int incomingAvatarWidth;
+    public int incomingAvatarHeight;
 
-    private int incomingBubbleDrawable;
-    private int incomingDefaultBubbleColor;
-    private int incomingDefaultBubblePressedColor;
-    private int incomingDefaultBubbleSelectedColor;
+    public int incomingBubbleDrawable;
+    public int incomingDefaultBubbleColor;
+    public int incomingDefaultBubblePressedColor;
+    public int incomingDefaultBubbleSelectedColor;
 
-    private int incomingImageOverlayDrawable;
-    private int incomingDefaultImageOverlayPressedColor;
-    private int incomingDefaultImageOverlaySelectedColor;
+    public int incomingImageOverlayDrawable;
+    public int incomingDefaultImageOverlayPressedColor;
+    public int incomingDefaultImageOverlaySelectedColor;
 
-    private int incomingDefaultBubblePaddingLeft;
-    private int incomingDefaultBubblePaddingRight;
-    private int incomingDefaultBubblePaddingTop;
-    private int incomingDefaultBubblePaddingBottom;
+    public int incomingDefaultBubblePaddingLeft;
+    public int incomingDefaultBubblePaddingRight;
+    public int incomingDefaultBubblePaddingTop;
+    public int incomingDefaultBubblePaddingBottom;
 
-    private int incomingTextColor;
-    private int incomingTextSize;
-    private int incomingTextStyle;
+    public int incomingTextColor;
+    public int incomingTextSize;
+    public int incomingTextStyle;
 
-    private int incomingTimeTextColor;
-    private int incomingTimeTextSize;
-    private int incomingTimeTextStyle;
+    public int incomingTimeTextColor;
+    public int incomingTimeTextSize;
+    public int incomingTimeTextStyle;
 
-    private int incomingImageTimeTextColor;
-    private int incomingImageTimeTextSize;
-    private int incomingImageTimeTextStyle;
+    public int incomingImageTimeTextColor;
+    public int incomingImageTimeTextSize;
+    public int incomingImageTimeTextStyle;
 
-    private int outcomingBubbleDrawable;
-    private int outcomingDefaultBubbleColor;
-    private int outcomingDefaultBubblePressedColor;
-    private int outcomingDefaultBubbleSelectedColor;
+    public int outcomingBubbleDrawable;
+    public int outcomingDefaultBubbleColor;
+    public int outcomingDefaultBubblePressedColor;
+    public int outcomingDefaultBubbleSelectedColor;
 
-    private int outcomingImageOverlayDrawable;
-    private int outcomingDefaultImageOverlayPressedColor;
-    private int outcomingDefaultImageOverlaySelectedColor;
+    public int outcomingImageOverlayDrawable;
+    public int outcomingDefaultImageOverlayPressedColor;
+    public int outcomingDefaultImageOverlaySelectedColor;
 
-    private int outcomingDefaultBubblePaddingLeft;
-    private int outcomingDefaultBubblePaddingRight;
-    private int outcomingDefaultBubblePaddingTop;
-    private int outcomingDefaultBubblePaddingBottom;
+    public int outcomingDefaultBubblePaddingLeft;
+    public int outcomingDefaultBubblePaddingRight;
+    public int outcomingDefaultBubblePaddingTop;
+    public int outcomingDefaultBubblePaddingBottom;
 
-    private int outcomingTextColor;
-    private int outcomingTextSize;
-    private int outcomingTextStyle;
+    public int outcomingTextColor;
+    public int outcomingTextSize;
+    public int outcomingTextStyle;
 
-    private int outcomingTimeTextColor;
-    private int outcomingTimeTextSize;
-    private int outcomingTimeTextStyle;
+    public int outcomingTimeTextColor;
+    public int outcomingTimeTextSize;
+    public int outcomingTimeTextStyle;
 
-    private int outcomingImageTimeTextColor;
-    private int outcomingImageTimeTextSize;
-    private int outcomingImageTimeTextStyle;
+    public int outcomingImageTimeTextColor;
+    public int outcomingImageTimeTextSize;
+    public int outcomingImageTimeTextStyle;
 
-    private int dateHeaderPadding;
-    private String dateHeaderFormat;
-    private int dateHeaderTextColor;
-    private int dateHeaderTextSize;
-    private int dateHeaderTextStyle;
+    public int dateHeaderPadding;
+    public String dateHeaderFormat;
+    public int dateHeaderTextColor;
+    public int dateHeaderTextSize;
+    public int dateHeaderTextStyle;
 
     static MessagesListStyle parse(Context context, AttributeSet attrs) {
         MessagesListStyle style = new MessagesListStyle(context, attrs);
@@ -210,11 +210,11 @@ class MessagesListStyle extends Style {
         return style;
     }
 
-    private MessagesListStyle(Context context, AttributeSet attrs) {
+    public MessagesListStyle(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    private Drawable getMessageSelector(@ColorInt int normalColor, @ColorInt int selectedColor,
+    public Drawable getMessageSelector(@ColorInt int normalColor, @ColorInt int selectedColor,
                                         @ColorInt int pressedColor, @DrawableRes int shape) {
 
         Drawable drawable = DrawableCompat.wrap(getVectorDrawable(shape)).mutate();
@@ -231,55 +231,55 @@ class MessagesListStyle extends Style {
         return drawable;
     }
 
-    protected int getTextAutoLinkMask() {
+    public int getTextAutoLinkMask() {
         return textAutoLinkMask;
     }
 
-    protected int getIncomingTextLinkColor() {
+    public int getIncomingTextLinkColor() {
         return incomingTextLinkColor;
     }
 
-    protected int getOutcomingTextLinkColor() {
+    public int getOutcomingTextLinkColor() {
         return outcomingTextLinkColor;
     }
 
-    protected int getIncomingAvatarWidth() {
+    public int getIncomingAvatarWidth() {
         return incomingAvatarWidth;
     }
 
-    protected int getIncomingAvatarHeight() {
+    public int getIncomingAvatarHeight() {
         return incomingAvatarHeight;
     }
 
-    protected int getIncomingDefaultBubblePaddingLeft() {
+    public int getIncomingDefaultBubblePaddingLeft() {
         return incomingDefaultBubblePaddingLeft;
     }
 
-    protected int getIncomingDefaultBubblePaddingRight() {
+    public int getIncomingDefaultBubblePaddingRight() {
         return incomingDefaultBubblePaddingRight;
     }
 
-    protected int getIncomingDefaultBubblePaddingTop() {
+    public int getIncomingDefaultBubblePaddingTop() {
         return incomingDefaultBubblePaddingTop;
     }
 
-    protected int getIncomingDefaultBubblePaddingBottom() {
+    public int getIncomingDefaultBubblePaddingBottom() {
         return incomingDefaultBubblePaddingBottom;
     }
 
-    protected int getIncomingTextColor() {
+    public int getIncomingTextColor() {
         return incomingTextColor;
     }
 
-    protected int getIncomingTextSize() {
+    public int getIncomingTextSize() {
         return incomingTextSize;
     }
 
-    protected int getIncomingTextStyle() {
+    public int getIncomingTextStyle() {
         return incomingTextStyle;
     }
 
-    protected Drawable getOutcomingBubbleDrawable() {
+    public Drawable getOutcomingBubbleDrawable() {
         if (outcomingBubbleDrawable == -1) {
             return getMessageSelector(outcomingDefaultBubbleColor, outcomingDefaultBubbleSelectedColor,
                     outcomingDefaultBubblePressedColor, R.drawable.shape_outcoming_message);
@@ -288,7 +288,7 @@ class MessagesListStyle extends Style {
         }
     }
 
-    protected Drawable getOutcomingImageOverlayDrawable() {
+    public Drawable getOutcomingImageOverlayDrawable() {
         if (outcomingImageOverlayDrawable == -1) {
             return getMessageSelector(Color.TRANSPARENT, outcomingDefaultImageOverlaySelectedColor,
                     outcomingDefaultImageOverlayPressedColor, R.drawable.shape_outcoming_message);
@@ -297,103 +297,103 @@ class MessagesListStyle extends Style {
         }
     }
 
-    protected int getOutcomingDefaultBubblePaddingLeft() {
+    public int getOutcomingDefaultBubblePaddingLeft() {
         return outcomingDefaultBubblePaddingLeft;
     }
 
-    protected int getOutcomingDefaultBubblePaddingRight() {
+    public int getOutcomingDefaultBubblePaddingRight() {
         return outcomingDefaultBubblePaddingRight;
     }
 
-    protected int getOutcomingDefaultBubblePaddingTop() {
+    public int getOutcomingDefaultBubblePaddingTop() {
         return outcomingDefaultBubblePaddingTop;
     }
 
-    protected int getOutcomingDefaultBubblePaddingBottom() {
+    public int getOutcomingDefaultBubblePaddingBottom() {
         return outcomingDefaultBubblePaddingBottom;
     }
 
-    protected int getOutcomingTextColor() {
+    public int getOutcomingTextColor() {
         return outcomingTextColor;
     }
 
-    protected int getOutcomingTextSize() {
+    public int getOutcomingTextSize() {
         return outcomingTextSize;
     }
 
-    protected int getOutcomingTextStyle() {
+    public int getOutcomingTextStyle() {
         return outcomingTextStyle;
     }
 
-    protected int getOutcomingTimeTextColor() {
+    public int getOutcomingTimeTextColor() {
         return outcomingTimeTextColor;
     }
 
-    protected int getOutcomingTimeTextSize() {
+    public int getOutcomingTimeTextSize() {
         return outcomingTimeTextSize;
     }
 
-    protected int getOutcomingTimeTextStyle() {
+    public int getOutcomingTimeTextStyle() {
         return outcomingTimeTextStyle;
     }
 
-    protected int getOutcomingImageTimeTextColor() {
+    public int getOutcomingImageTimeTextColor() {
         return outcomingImageTimeTextColor;
     }
 
-    protected int getOutcomingImageTimeTextSize() {
+    public int getOutcomingImageTimeTextSize() {
         return outcomingImageTimeTextSize;
     }
 
-    protected int getOutcomingImageTimeTextStyle() {
+    public int getOutcomingImageTimeTextStyle() {
         return outcomingImageTimeTextStyle;
     }
 
-    protected int getDateHeaderTextColor() {
+    public int getDateHeaderTextColor() {
         return dateHeaderTextColor;
     }
 
-    protected int getDateHeaderTextSize() {
+    public int getDateHeaderTextSize() {
         return dateHeaderTextSize;
     }
 
-    protected int getDateHeaderTextStyle() {
+    public int getDateHeaderTextStyle() {
         return dateHeaderTextStyle;
     }
 
-    protected int getDateHeaderPadding() {
+    public int getDateHeaderPadding() {
         return dateHeaderPadding;
     }
 
-    protected String getDateHeaderFormat() {
+    public String getDateHeaderFormat() {
         return dateHeaderFormat;
     }
 
-    protected int getIncomingTimeTextSize() {
+    public int getIncomingTimeTextSize() {
         return incomingTimeTextSize;
     }
 
-    protected int getIncomingTimeTextStyle() {
+    public int getIncomingTimeTextStyle() {
         return incomingTimeTextStyle;
     }
 
-    protected int getIncomingTimeTextColor() {
+    public int getIncomingTimeTextColor() {
         return incomingTimeTextColor;
     }
 
-    protected int getIncomingImageTimeTextColor() {
+    public int getIncomingImageTimeTextColor() {
         return incomingImageTimeTextColor;
     }
 
-    protected int getIncomingImageTimeTextSize() {
+    public int getIncomingImageTimeTextSize() {
         return incomingImageTimeTextSize;
     }
 
-    protected int getIncomingImageTimeTextStyle() {
+    public int getIncomingImageTimeTextStyle() {
         return incomingImageTimeTextStyle;
     }
 
-    protected Drawable getIncomingBubbleDrawable() {
+    public Drawable getIncomingBubbleDrawable() {
         if (incomingBubbleDrawable == -1) {
             return getMessageSelector(incomingDefaultBubbleColor, incomingDefaultBubbleSelectedColor,
                     incomingDefaultBubblePressedColor, R.drawable.shape_incoming_message);
@@ -402,7 +402,7 @@ class MessagesListStyle extends Style {
         }
     }
 
-    protected Drawable getIncomingImageOverlayDrawable() {
+    public Drawable getIncomingImageOverlayDrawable() {
         if (incomingImageOverlayDrawable == -1) {
             return getMessageSelector(Color.TRANSPARENT, incomingDefaultImageOverlaySelectedColor,
                     incomingDefaultImageOverlayPressedColor, R.drawable.shape_incoming_message);
