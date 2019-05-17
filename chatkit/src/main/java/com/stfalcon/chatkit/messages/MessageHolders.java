@@ -833,7 +833,7 @@ public class MessageHolders {
         }
 
         @Override
-        public final void applyStyle(MessagesListStyle style) {
+        public void applyStyle(MessagesListStyle style) {
             super.applyStyle(style);
             if (bubble != null) {
                 bubble.setPadding(style.getOutcomingDefaultBubblePaddingLeft(),
