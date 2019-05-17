@@ -512,11 +512,11 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
 
         for (int i = 0; i < items.size(); i++) {
             Wrapper wrapper = items.get(i);
-            if (wrapper.item instanceof Date) {
+            if (wrapper.item instanceof DateTime) {
                 if (i == 0) {
                     indicesToDelete.add(i);
                 } else {
-                    if (items.get(i - 1).item instanceof Date) {
+                    if (items.get(i - 1).item instanceof DateTime) {
                         indicesToDelete.add(i);
                     }
                 }
